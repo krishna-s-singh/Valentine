@@ -130,33 +130,8 @@
   <p>You are my favourite person, my best friend, my love story, and my forever ❤️</p>
   <h2>Happy Valentine’s Day 💌</h2>
   <h3>— Your Krishu & Sweetheart 💕</h3>
+  <br>
+  <button onclick="window.open('YOUR_GOOGLE_FORM_LINK_HERE', '_blank')">
+    Submit Your Answers 💌
+  </button>
 </div>
-
-<script>
-  function nextStep(step) {
-    document.getElementById("step" + step).classList.add("hidden");
-    if(step === 6){
-      document.getElementById("final").classList.remove("hidden");
-    } else {
-      document.getElementById("step" + (step + 1)).classList.remove("hidden");
-    }
-  }
-
-  function wrong() {
-    alert("Galat jawab, Sujeet 😌 Try again!");
-  }
-
-  // Falling hearts 💕
-  setInterval(() => {
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = "❤️";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (3 + Math.random() * 3) + "s";
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 5000);
-  }, 300);
-</script>
-
-</body>
-</html>
