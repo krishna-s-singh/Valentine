@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For Sujeet 💖</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #ff4d6d, #ffb3c1);
+      text-align: center;
+      padding: 40px;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.18);
+      padding: 25px;
+      border-radius: 22px;
+      max-width: 520px;
+      margin: auto;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+      backdrop-filter: blur(6px);
+      animation: fadeIn 0.6s ease;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .question {
+      margin: 20px 0;
+      font-size: 19px;
+    }
+
+    button {
+      padding: 10px 22px;
+      border: none;
+      border-radius: 25px;
+      margin: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      background: #ff1e50;
+      color: white;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.07);
+      background: #ff0033;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    input {
+      padding: 9px;
+      border-radius: 12px;
+      border: none;
+      width: 80%;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .heart {
+      position: fixed;
+      top: -10px;
+      font-size: 20px;
+      animation: fall 5s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(100vh); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="card" id="step1">
+  <h1>💌 Valentine Test for Pati Ji 💌</h1>
+  <p>Dear Sujeet, answer honestly 😌❤️</p>
+  <p>From your Krishu & Sweetheart 💕</p>
+  <button onclick="nextStep(1)">Start Bollywood Love Story 🎬💖</button>
+</div>
+
+<div class="card hidden" id="step2">
+  <div class="question">1️⃣ Sujeet, who do you love the most? 😏</div>
+  <button onclick="wrong()">Your Phone 📱😂</button>
+  <button onclick="nextStep(2)">Krishu ❤️</button>
+</div>
+
+<div class="card hidden" id="step3">
+  <div class="question">2️⃣ Our love story is like which Bollywood movie? 🎥</div>
+  <button onclick="nextStep(3)">DDLJ 💑</button>
+  <button onclick="nextStep(3)">Kabir Singh but sweeter 😌😂</button>
+  <button onclick="nextStep(3)">All romantic movies combined 💕</button>
+</div>
+
+<div class="card hidden" id="step4">
+  <div class="question">3️⃣ If Krishu gets angry 😤, Pati Ji will?</div>
+  <button onclick="nextStep(4)">Hug her tightly 🤗</button>
+  <button onclick="nextStep(4)">Say sorry 100 times 😇</button>
+</div>
+
+<div class="card hidden" id="step5">
+  <div class="question">4️⃣ One thing you love most about Krishu? 🥺❤️</div>
+  <input type="text" id="answer" placeholder="Type here, Sujeet...">
+  <br><br>
+  <button onclick="nextStep(5)">Next 💌</button>
+</div>
+
+<div class="card hidden" id="step6">
+  <div class="question">5️⃣ Will you love Krishu forever? 💍</div>
+  <button onclick="nextStep(6)">Yes, forever ❤️</button>
+  <button onclick="nextStep(6)">Forever + extra romance 😌💖</button>
+</div>
+
+<div class="card hidden" id="final">
+  <h1>🎉 Congratulations Sujeet 🎉</h1>
+  <p>You have officially passed Krishu's Valentine Test 💖</p>
+  <h2>Dear Pati Ji,</h2>
+  <p>You are my favourite person, my best friend, my love story, and my forever ❤️</p>
+  <h2>Happy Valentine’s Day 💌</h2>
+  <h3>— Your Krishu & Sweetheart 💕</h3>
+</div>
+
+<script>
+  function nextStep(step) {
+    document.getElementById("step" + step).classList.add("hidden");
+    if(step === 6){
+      document.getElementById("final").classList.remove("hidden");
+    } else {
+      document.getElementById("step" + (step + 1)).classList.remove("hidden");
+    }
+  }
+
+  function wrong() {
+    alert("Galat jawab, Sujeet 😌 Try again!");
+  }
+
+  // Falling hearts 💕
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 5000);
+  }, 300);
+</script>
+
+</body>
+</html>
